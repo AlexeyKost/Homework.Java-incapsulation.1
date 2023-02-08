@@ -1,92 +1,63 @@
 package Radio;
 
 public class Radio {
-
-    private int maxStationNumber = 9;
-    private int minStationNumber = 0;
-    private int stationNumber = minStationNumber;
-
-    public Radio(int maxStationNumber) {
-        this.maxStationNumber = maxStationNumber - 1;
-    }
-
-    public Radio() {
-
-    }
+    private int stationNumber;
 
     public int getStationNumber() {
         return stationNumber;
     }
 
-    public int getMaxStationNumber() {
-        return maxStationNumber;
-    }
-
-    public int getMinStationNumber() {
-        return minStationNumber;
-    }
-
     public void setStationNumber(int newStationNumber) {
-        if (newStationNumber < minStationNumber) {
+        if (newStationNumber < 0) {
             return;
         }
-        if (newStationNumber > maxStationNumber) {
+        if (newStationNumber > 9) {
             return;
         }
         stationNumber = newStationNumber;
     }
 
     public void increaseStationNumber() { // Следующая радиостанция
-        if (stationNumber < maxStationNumber) {
+        if (stationNumber < 9) {
             stationNumber = stationNumber + 1;
         } else {
-            stationNumber = minStationNumber;
+            stationNumber = 0;
         }
     }
 
     public void previousStationNumber() { // Предыдущая радиостанция
-        if (stationNumber > minStationNumber) {
+        if (stationNumber > 0) {
             stationNumber = stationNumber - 1;
         } else {
-            stationNumber = maxStationNumber;
+            stationNumber = 9;
         }
     }
 
 
-    private int maxVolume = 100;
-    private int minVolume = 0;
     private int volume;
 
     public int getVolume() {
         return volume;
     }
 
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
     public void setVolume(int newVolume) {
-        if (newVolume < minVolume) {
+        if (newVolume < 0) {
             return;
         }
-        if (newVolume > maxVolume) {
+        if (newVolume > 10) {
             return;
         }
         volume = newVolume;
     }
 
     public void increaseVolume() { // Увеличение громкости
-        if (volume < maxVolume) {
+        if (volume < 10) {
             volume = volume + 1;
         }
     }
 
     public void descreaseVolume() { // Уменьшение громкости
-        if (volume > minVolume) {
+        if (volume > 0) {
             volume = volume - 1;
         }
     }
