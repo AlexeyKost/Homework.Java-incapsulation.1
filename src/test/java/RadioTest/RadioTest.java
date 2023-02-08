@@ -12,7 +12,7 @@ public class RadioTest {
 
         rad.setStationNumber(10);
 
-        int expected = 0;
+        int expected = 10;
         int actual = rad.getStationNumber();
 
         Assertions.assertEquals(expected, actual);
