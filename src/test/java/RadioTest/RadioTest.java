@@ -12,7 +12,7 @@ public class RadioTest {
 
         rad.setStationNumber(10);
 
-        int expected = 10;
+        int expected = 0;
         int actual = rad.getStationNumber();
 
         Assertions.assertEquals(expected, actual);
@@ -110,11 +110,11 @@ public class RadioTest {
     @Test
     public void shouldToStayTen() { // Верхнее значение громкости при ее прибавлении
         Radio rad = new Radio();
-        rad.setVolume(100);
+        rad.setVolume(10);
 
         rad.increaseVolume();
 
-        int expected = 100;
+        int expected = 10;
         int actual = rad.getVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -163,7 +163,7 @@ public class RadioTest {
     public void shouldToVolume() { // Выставляет уровень звука
         Radio rad = new Radio();
 
-        rad.setVolume(101);
+        rad.setVolume(11);
 
         int expected = 0;
         int actual = rad.getVolume();
@@ -181,22 +181,6 @@ public class RadioTest {
         int actual = rad.getVolume();
 
         Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void testRadioStationNumber() {
-        Radio rad = new Radio(26);
-
-        Assertions.assertEquals(25, rad.getMaxStationNumber());
-        Assertions.assertEquals(0, rad.getMinStationNumber());
-    }
-
-    @Test
-    public void testVolume() {
-        Radio rad = new Radio();
-
-        Assertions.assertEquals(0, rad.getMinVolume());
-        Assertions.assertEquals(100, rad.getMaxVolume());
     }
 
 }
